@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { ToolbarComponent } from '../../components/toolbar/toolbar';
+import { MarketPricesComponent } from '../market-prices/market-prices';
+import { PortfolioComponent } from '../portfolio/portfolio';
+import { WatchingComponent } from '../watching/watching';
+
 
 @Component({
   selector: 'page-home',
@@ -7,8 +11,19 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  private currentPage: string;
+
+  constructor() {
 
   }
+  
+  ngOnInit(){
+    this.currentPage="Market";
+  }
+
+  navigatePage( pageName: string){
+    this.currentPage = pageName;
+  }
+  
 
 }

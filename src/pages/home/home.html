@@ -1,14 +1,25 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+<ion-header> 
+  <toolbar [page]="this.currentPage" (changedPage)="navigatePage($event)"></toolbar>
 </ion-header>
+<ion-content>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    <div [ngSwitch]="this.currentPage">
+      <div *ngSwitchCase="'Market'"   > <market-prices></market-prices> </div>
+      <div *ngSwitchCase="'Portfolio'"> <portfolio></portfolio> </div>
+      <div *ngSwitchCase="'Watching'" > <watching></watching> </div>
+      
+    </div>
+
+    <ion-card>
+
+        <ion-card-header>
+          Card Header
+        </ion-card-header>
+      
+        <ion-card-content>
+          {{this.currentPage}}
+        </ion-card-content>
+      
+      </ion-card>
+  
 </ion-content>

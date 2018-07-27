@@ -1,0 +1,15 @@
+<ion-toolbar [(ngModel)]="this.page" color="primary">
+<ion-title padding color="primary">  Crypto Tracker and Alerts</ion-title>
+<ion-segment color="light">
+  <ion-segment-button (click)="navigatePage('Market')" value="Market">
+    Market
+  </ion-segment-button>
+  <ion-segment-button (click)="navigatePage('Portfolio')" value="Portfolio">
+    Portfolio
+  </ion-segment-button>
+  <ion-segment-button (click)="navigatePage('Watching')" value="Watching">
+    Watching
+  </ion-segment-button>
+</ion-segment>
+
+</ion-toolbar>
